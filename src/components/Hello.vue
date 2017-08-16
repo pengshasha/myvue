@@ -46,12 +46,16 @@ export default {
       item.isDel = !item.isDel
       this.isEditState(item)
       item.isShow = false
+      if(!item.isDel) {
+        this.title = '编辑'
+      }
     },
     del: function (index) {
      this.items.splice(index, 1)
     },
     edit: function (item) {
       if(!this.isEditState(item)) {
+        this.title = '编辑'
         item.isShow = !item.isShow
       } else {
         return false;
