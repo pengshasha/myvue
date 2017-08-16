@@ -1,15 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+const LIST = r => require.ensure([], () => r(require('../components/Hello')), 'list');
+const COUNT = r => require.ensure([], () => r(require('../components/count')), 'count');
+// const EMOTIONAL = r => require.ensure([], () => r(require('../page/emotionalTalk/emotionalTalk')), 'emotionalTalk');
 
-Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
-})
+export default [
+  {
+  path: '/list',
+  component: LIST
+},
+  {
+  path: '/count',
+  component: COUNT
+  }
+]
