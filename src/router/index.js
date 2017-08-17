@@ -1,6 +1,6 @@
 const LIST = r => require.ensure([], () => r(require('../components/Hello')), 'list');
 const COUNT = r => require.ensure([], () => r(require('../components/count')), 'count');
-// const EMOTIONAL = r => require.ensure([], () => r(require('../page/emotionalTalk/emotionalTalk')), 'emotionalTalk');
+const CONTROL = r => require.ensure([], () => r(require('../components/form-control')), 'control');
 
 export default [
   {
@@ -10,5 +10,9 @@ export default [
   {
   path: '/count',
   component: COUNT
+  },
+  {
+  path: '/form-control',
+  component: CONTROL
   }
 ]

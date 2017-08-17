@@ -6,6 +6,7 @@
   <div class="nav">
     <router-link to="/list">todo list</router-link>
     <router-link to="/count">count</router-link>
+    <router-link to="/form-control">form control</router-link>
   </div>
 </div>
 </template>
