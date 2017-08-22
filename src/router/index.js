@@ -1,18 +1,44 @@
 const LIST = r => require.ensure([], () => r(require('../components/Hello')), 'list');
 const COUNT = r => require.ensure([], () => r(require('../components/count')), 'count');
 const CONTROL = r => require.ensure([], () => r(require('../components/form-control')), 'control');
+const DETAILS_INDEX = r => require.ensure([], () => r(require('../components/details/index')), 'details');
+const COURSE = r => require.ensure([], () => r(require('../components/details/course-list')), 'details');
+const PEOPLE = r => require.ensure([], () => r(require('../components/details/people-list')), 'details');
 
 export default [
   {
-  path: '/list',
-  component: LIST
-},
-  {
-  path: '/count',
-  component: COUNT
+    path: '/',
+    redirect: '/list'
   },
   {
-  path: '/form-control',
-  component: CONTROL
+    path: '/list',
+    component: LIST
+},
+  {
+    path: '/count',
+    component: COUNT
+  },
+  {
+    path: '/form-control',
+    component: CONTROL
+  },
+  {
+    path: '/list-details',
+    component: DETAILS_INDEX,
+
+    children: [
+      {
+        path: '',
+        redirect: 'people-list'
+      },
+      {
+        path: 'people-list',
+        component: PEOPLE
+      },
+      {
+        path: 'course-list',
+        component: COURSE
+      }
+    ]
   }
 ]

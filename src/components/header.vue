@@ -1,12 +1,13 @@
 <template>
 <div class="header">
   <a href="#" class="logo">
-    <img src="../../static/logo.png">
+    <img src="../assets/logo.png">
   </a>
   <div class="nav">
     <router-link to="/list">todo list</router-link>
     <router-link to="/count">count</router-link>
     <router-link to="/form-control">form control</router-link>
+    <router-link to="/list-details">products list</router-link>
   </div>
 </div>
 </template>
@@ -27,7 +28,12 @@
   }
   .header a.logo{
     float: left;
+    width: 70px;
+    height:70px;
     padding-right: 60px;
+  }
+  .header a img{
+    max-width: 100%;
   }
   .nav{
     float: left;
@@ -38,6 +44,9 @@
     display: inline-block;
     padding: 0 20px;
 
+  }
+  .nav a.router-link-active{
+    color: red;
   }
   .nav a:hover{
     color: red;
