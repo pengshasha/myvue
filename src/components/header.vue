@@ -23,6 +23,7 @@
     padding: 30px 10px;
     overflow: hidden;
     border-bottom: 5px solid #ccc;
+    box-sizing: border-box;
   }
   .header a.logo{
     float: left;

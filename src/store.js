@@ -12,5 +12,12 @@ export default {
     } else {
       window.localStorage.setItem(VUE_KEY, JSON.stringify(items))
     }
+  },
+  clearValue(items) {
+    if(arguments.length<1) {
+      window.localStorage.clear()
+    } else {
+      window.localStorage.removeItem(items)
+    }
   }
 }
