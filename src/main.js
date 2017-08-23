@@ -5,12 +5,14 @@ import App from './App'
 import VueRouter from 'vue-router'
 import Header from '../src/components/header'
 import routes from './router'
+import resource from 'vue-resource'
 
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.component('headers', Header)
-Vue.use(VueRouter);
+Vue.use(resource)
+Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes

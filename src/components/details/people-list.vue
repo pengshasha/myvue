@@ -1,12 +1,12 @@
 <template>
   <div class="people-list">
     <ul class="list-box">
-      <li>
-        <img src="../../assets/ayst.jpg">
+      <li v-for="item in listData">
+        <img :src="'../../../static/image/'+ item.src">
         <div class="text-box">
-          <h3>爱因斯坦</h3>
-          <p class="dis">阿尔伯特·爱因斯坦（Albert.Einstein，1879年3月14日-1955年4月18日），出生于德国符腾堡王国乌尔姆市，毕业于苏黎世大学，犹太裔物理学家，享年76岁。</p>
-          <span class="time">1879年3月14日</span>
+          <h3>{{ item.name }}</h3>
+          <p class="dis">{{ item.dis }}</p>
+          <span class="time">{{ item.time }}</span>
           <span class="look-more">查看详情</span>
         </div>
       </li>
@@ -51,6 +51,30 @@
 </template>
 <script>
   export default {
+    data(){
+      return {
+        listData: "",
+        src: ""
+      }
+    },
+    mounted: function () {
+      this.getListData()
+    },
+    methods: {
+      getListData: function () {
+        var _this = this;
+        _this.$http.get('../../../static/data/fakedata.json').then(function (res) {
+          if(res && res.status == 200) {
+//            res.body.peopleList.forEach(function (value, index) {
+//              value.src = require()
+//            })
+            _this.listData = res.body.peopleList || []
+          } else {
+            throw new Error('Failed to obtain data')
+          }
+        })
+      }
+    }
 
   }
 </script>
