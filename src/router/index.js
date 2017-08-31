@@ -4,6 +4,7 @@ const CONTROL = r => require.ensure([], () => r(require('../components/form-cont
 const DETAILS_INDEX = r => require.ensure([], () => r(require('../components/details/index')), 'details');
 const COURSE = r => require.ensure([], () => r(require('../components/details/course-list')), 'details');
 const PEOPLE = r => require.ensure([], () => r(require('../components/details/people-list')), 'details');
+const PEOPLE_DETAILS = r => require.ensure([], () => r(require('../components/details/look-details')), 'details');
 
 export default [
   {
@@ -33,7 +34,15 @@ export default [
       },
       {
         path: 'people-list',
-        component: PEOPLE
+        component: PEOPLE,
+        name: 'list',
+        children: [
+          {
+            path: 'look-more/:id',
+            name: 'look-more',
+            component: PEOPLE_DETAILS
+          }
+        ]
       },
       {
         path: 'course-list',

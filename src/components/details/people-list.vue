@@ -7,46 +7,11 @@
           <h3>{{ item.name }}</h3>
           <p class="dis">{{ item.dis }}</p>
           <span class="time">{{ item.time }}</span>
-          <span class="look-more">查看详情</span>
-        </div>
-      </li>
-      <li>
-        <img src="../../assets/ayst.jpg">
-        <div class="text-box">
-          <h3>爱因斯坦</h3>
-          <p class="dis">阿尔伯特·爱因斯坦（Albert.Einstein，1879年3月14日-1955年4月18日），出生于德国符腾堡王国乌尔姆市，毕业于苏黎世大学，犹太裔物理学家，享年76岁。</p>
-          <span class="time">1879年3月14日</span>
-          <span class="look-more">查看详情</span>
-        </div>
-      </li>
-      <li>
-        <img src="../../assets/ayst.jpg">
-        <div class="text-box">
-          <h3>爱因斯坦</h3>
-          <p class="dis">阿尔伯特·爱因斯坦（Albert.Einstein，1879年3月14日-1955年4月18日），出生于德国符腾堡王国乌尔姆市，毕业于苏黎世大学，犹太裔物理学家，享年76岁。</p>
-          <span class="time">1879年3月14日</span>
-          <span class="look-more">查看详情</span>
-        </div>
-      </li>
-      <li>
-        <img src="../../assets/ayst.jpg">
-        <div class="text-box">
-          <h3>爱因斯坦</h3>
-          <p class="dis">阿尔伯特·爱因斯坦（Albert.Einstein，1879年3月14日-1955年4月18日），出生于德国符腾堡王国乌尔姆市，毕业于苏黎世大学，犹太裔物理学家，享年76岁。</p>
-          <span class="time">1879年3月14日</span>
-          <span class="look-more">查看详情</span>
-        </div>
-      </li>
-      <li>
-        <img src="../../assets/ayst.jpg">
-        <div class="text-box">
-          <h3>爱因斯坦</h3>
-          <p class="dis">阿尔伯特·爱因斯坦（Albert.Einstein，1879年3月14日-1955年4月18日），出生于德国符腾堡王国乌尔姆市，毕业于苏黎世大学，犹太裔物理学家，享年76岁。</p>
-          <span class="time">1879年3月14日</span>
-          <span class="look-more">查看详情</span>
+          <router-link class="look-more" :to="{name: 'look-more',params: {id: item.id}}" >查看详情</router-link>
         </div>
       </li>
     </ul>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -117,7 +82,7 @@
     float: left;
     color: #fff;
   }
-  .people-list ul li span.look-more{
+  .people-list ul li a.look-more{
     font-size: xx-small;
     color: green;
     float: right;
