@@ -5,6 +5,7 @@ const DETAILS_INDEX = r => require.ensure([], () => r(require('../components/det
 const COURSE = r => require.ensure([], () => r(require('../components/details/course-list')), 'details');
 const PEOPLE = r => require.ensure([], () => r(require('../components/details/people-list')), 'details');
 const PEOPLE_DETAILS = r => require.ensure([], () => r(require('../components/details/look-details')), 'details');
+const VUEX_TEST = r => require.ensure([], () => r(require('../components/vuex-test')), 'vuex');
 
 export default [
   {
@@ -49,5 +50,9 @@ export default [
         component: COURSE
       }
     ]
+  },
+  {
+    path: '/vuex-test',
+    component: VUEX_TEST
   }
 ]

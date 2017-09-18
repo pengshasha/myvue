@@ -8,6 +8,7 @@
     <router-link to="/count">count</router-link>
     <router-link to="/form-control">form control</router-link>
     <router-link to="/list-details">products list</router-link>
+    <router-link to="/vuex-test">vuex test</router-link>
   </div>
 </div>
 </template>
